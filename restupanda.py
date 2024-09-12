@@ -97,3 +97,22 @@ print(data.head())
 data_sorted_ascending = data.sort_values(by='Pemasukan', ascending=True)
 print("\nData diurutkan berdasarkan pemasukan (ascending):")
 print(data_sorted_ascending)
+
+# Fungsi slicing pada DataFrame
+# Menyaring data dari baris ke-10 hingga ke-20
+data_slice = data.iloc[10:21]  # Baris ke-10 sampai ke-20 (inclusive)
+print("\nData dari baris ke-10 hingga ke-20:")
+print(data_slice)
+
+# Menyaring data berdasarkan kriteria tertentu
+# Misalnya, data dari bulan tertentu
+bulan_tentukan = 'Januari'
+data_bulan_tertentu = data[data['Bulan'] == bulan_tentukan]
+print(f"\nData untuk bulan {bulan_tentukan}:")
+print(data_bulan_tertentu)
+
+# Menyaring data berdasarkan beberapa bulan
+bulan_tentukan = ['Januari', 'Februari']
+data_bulan_tertentu_multiple = data[data['Bulan'].isin(bulan_tentukan)]
+print(f"\nData untuk bulan {', '.join(bulan_tentukan)}:")
+print(data_bulan_tertentu_multiple)
